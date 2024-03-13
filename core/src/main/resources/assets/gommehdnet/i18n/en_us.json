@@ -1,0 +1,29 @@
+{
+  "labymod": {
+    "hudWidgetCategory": {
+      "gm_widgets": {
+        "name": "GommeHDnet Widgets",
+        "description": "Bedwars Widgets"
+      }
+    }
+  },
+  "gommehdnet": {
+    "settings": {
+      "name": "GommeHDnet Addon",
+      "enabled": {
+        "name": "Enabled"
+      }
+    },
+    "hudWidget": {
+      "bw_goldWidget": {
+        "name": "Gold Timer"
+      },
+      "bw_ironWidget": {
+        "name": "Iron Timer"
+      },
+      "bw_diamondWidget": {
+        "name": "Diamond Timer"
+      }
+    }
+  }
+}

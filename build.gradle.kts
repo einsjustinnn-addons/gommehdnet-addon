@@ -10,12 +10,12 @@ version = "1.0.0"
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
 labyMod {
-    defaultPackageName = "org.example" //change this to your main package name (used by all modules)
+    defaultPackageName = "de.einsjustinnn" //change this to your main package name (used by all modules)
     addonInfo {
-        namespace = "example"
-        displayName = "ExampleAddon"
-        author = "Example Author"
-        description = "Example Description"
+        namespace = "gommehdnet"
+        displayName = "GommeHDnet Addon"
+        author = "EinsJustinnn"
+        description = "This addon is requiered for activating the bugfixes on GommeHD.net. It offers advanced information for Minecraft Bedwars and show you your current team, your nickname and the elapsed time."
         minecraftVersion = "*"
         version = System.getenv().getOrDefault("VERSION", "0.0.1")
     }
