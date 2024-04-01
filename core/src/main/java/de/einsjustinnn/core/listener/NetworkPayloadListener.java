@@ -19,19 +19,20 @@ public class NetworkPayloadListener {
 
       PayloadReader payloadReader = new PayloadReader(event.getPayload());
 
-      String s = payloadReader.readString();
+      String payload = payloadReader.readString();
+      System.out.println("payload " + payload);
 
-      JsonObject jsonObject = JsonParser.parseString(s).getAsJsonObject();
+      JsonObject jsonObject = JsonParser.parseString(payload).getAsJsonObject();
 
       String serverType = jsonObject.get("data").getAsJsonObject().get("cloud_type").getAsString();
-      if (serverType.equalsIgnoreCase("lobby")) {
-        GommeAddon.bedwars.reset();
-      } else if (serverType.equalsIgnoreCase("classicbw")) {
+
+      GommeAddon.bedwars.reset();
+      System.out.println("reset");
+
+      if (serverType.equalsIgnoreCase("classicbw")) {
+        System.out.println("isClassic");
         GommeAddon.bedwars.setClassic(true);
       }
-
-      System.out.println("test " + s);
-
     }
   }
 }
