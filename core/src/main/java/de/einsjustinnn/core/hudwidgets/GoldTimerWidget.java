@@ -23,7 +23,7 @@ public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_goldWidget.name"), 40);
+    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_goldWidget.name"), GommeAddon.bedwars.getGoldTime());
   }
 
   @Override
@@ -34,7 +34,7 @@ public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
       long started = GommeAddon.bedwars.getStarted();
 
       int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
-      int timer = 40 - elapsedTime % 40;
+      int timer = GommeAddon.bedwars.getGoldTime() - elapsedTime % GommeAddon.bedwars.getGoldTime();
 
       line.updateAndFlush(timer);
 

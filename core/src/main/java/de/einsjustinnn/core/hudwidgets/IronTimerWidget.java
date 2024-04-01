@@ -23,18 +23,19 @@ public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_ironWidget.name"), 8);
+    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_ironWidget.name"), GommeAddon.bedwars.getIronTime());
   }
 
   @Override
   public void onTick(boolean isEditorContext) {
+
     super.onTick(isEditorContext);
 
     if (GommeAddon.bedwars.isRunning()) {
       long started = GommeAddon.bedwars.getStarted();
 
       int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
-      int timer = 8 - elapsedTime % 8;
+      int timer = GommeAddon.bedwars.getIronTime() - elapsedTime % GommeAddon.bedwars.getIronTime();
 
       line.updateAndFlush(timer);
 
