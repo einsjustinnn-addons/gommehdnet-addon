@@ -39,7 +39,7 @@ public class BedWars {
 
   public int getGoldTime() {
     if (classic) {
-      return 40;
+      return 30;
     } else {
       return 40;
     }
