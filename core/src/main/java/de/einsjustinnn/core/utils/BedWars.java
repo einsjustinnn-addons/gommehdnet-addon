@@ -30,6 +30,22 @@ public class BedWars {
     return started;
   }
 
+  public int getGoldTime() {
+    if (classic) {
+      return 40;
+    } else {
+      return 40;
+    }
+  }
+
+  public int getIronTime() {
+    if (classic) {
+      return 12;
+    } else {
+      return 8;
+    }
+  }
+
   public void reset() {
     started = 0L;
     running = false;
