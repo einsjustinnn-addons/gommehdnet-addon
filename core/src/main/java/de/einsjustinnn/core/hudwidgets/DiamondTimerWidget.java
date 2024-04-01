@@ -23,7 +23,7 @@ public class DiamondTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_diamondWidget.name"), 25);
+    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_diamondWidget.name"), GommeAddon.bedwars.getDiamondTime());
   }
 
   @Override
@@ -40,7 +40,7 @@ public class DiamondTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
       long started = GommeAddon.bedwars.getStarted();
 
       int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
-      int timer = 25 - elapsedTime % 25;
+      int timer = GommeAddon.bedwars.getDiamondTime() - elapsedTime % GommeAddon.bedwars.getDiamondTime();
 
       line.updateAndFlush(timer);
 
