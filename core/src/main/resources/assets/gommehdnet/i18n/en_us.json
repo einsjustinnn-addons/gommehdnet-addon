@@ -3,7 +3,7 @@
     "hudWidgetCategory": {
       "gm_widgets": {
         "name": "GommeHDnet Widgets",
-        "description": "Bedwars Widgets"
+        "description": "shows you information in-game about BedWars"
       }
     }
   },
@@ -18,11 +18,20 @@
       "bw_goldWidget": {
         "name": "Gold Timer"
       },
+      "bw_goldIconWidget": {
+        "name": "Gold Icon Timer"
+      },
       "bw_ironWidget": {
         "name": "Iron Timer"
       },
+      "bw_ironIconWidget": {
+        "name": "Iron Icon Timer"
+      },
       "bw_diamondWidget": {
         "name": "Diamond Timer"
+      },
+      "bw_diamondIconWidget": {
+        "name": "Diamond Icon Timer"
       }
     }
   }
