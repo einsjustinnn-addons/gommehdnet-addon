@@ -18,21 +18,15 @@ public class NetworkPayloadListener {
     if (identifier.getNamespace().equalsIgnoreCase("minecraft") && identifier.getPath().equalsIgnoreCase("gomod")) {
 
       PayloadReader payloadReader = new PayloadReader(event.getPayload());
-
       String payload = payloadReader.readString();
-      System.out.println("payload " + payload);
 
       JsonObject jsonObject = JsonParser.parseString(payload).getAsJsonObject();
 
       String serverType = jsonObject.get("data").getAsJsonObject().get("cloud_type").getAsString();
 
       GommeAddon.bedwars.reset();
-      System.out.println("reset");
 
-      if (serverType.equalsIgnoreCase("classicbw")) {
-        System.out.println("isClassic");
-        GommeAddon.bedwars.setClassic(true);
-      }
+      if (serverType.equalsIgnoreCase("classicbw")) GommeAddon.bedwars.setClassic(true);
     }
   }
 }
