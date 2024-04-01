@@ -30,6 +30,13 @@ public class BedWars {
     return started;
   }
 
+  public int getDiamondTime() {
+    if (!classic) {
+      return 25;
+    }
+    return -1;
+  }
+
   public int getGoldTime() {
     if (classic) {
       return 40;
