@@ -13,14 +13,13 @@ public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig>
   public DiamondTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_diamondIconWidget");
     bindCategory(hudWidgetCategory);
+    setIcon(Icon.url("resource:minecraft://textures/item/diamond.png"));
   }
 
   @Override
   public RenderableComponent getRenderableItemName(boolean isEditorContext) {
 
-    if (!GommeAddon.bedwars.isRunning()) {
-      return RenderableComponent.of(Component.text(GommeAddon.bedwars.getDiamondTime()));
-    }
+    if (!GommeAddon.bedwars.isRunning()) return RenderableComponent.of(Component.text(GommeAddon.bedwars.getDiamondTime()));
 
     long started = GommeAddon.bedwars.getStarted();
     int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);

@@ -8,7 +8,6 @@ import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine.State;
 import net.labymod.api.client.gui.icon.Icon;
-import net.labymod.api.client.resources.ResourceLocation;
 
 public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
 
@@ -17,7 +16,7 @@ public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   public GoldTimerWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_goldWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/gold_ingot.png")));
+    setIcon(Icon.url("resource:minecraft://textures/item/gold_ingot.png"));
   }
 
   @Override

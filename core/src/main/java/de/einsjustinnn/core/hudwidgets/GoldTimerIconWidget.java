@@ -13,14 +13,13 @@ public class GoldTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
   public GoldTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_goldIconWidget");
     bindCategory(hudWidgetCategory);
+    setIcon(Icon.url("resource:minecraft://textures/item/gold_ingot.png"));
   }
 
   @Override
   public RenderableComponent getRenderableItemName(boolean isEditorContext) {
 
-    if (!GommeAddon.bedwars.isRunning()) {
-      return RenderableComponent.of(Component.text(GommeAddon.bedwars.getGoldTime()));
-    }
+    if (!GommeAddon.bedwars.isRunning()) return RenderableComponent.of(Component.text(GommeAddon.bedwars.getGoldTime()));
 
     long started = GommeAddon.bedwars.getStarted();
     int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);

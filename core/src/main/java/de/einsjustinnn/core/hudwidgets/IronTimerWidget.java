@@ -8,7 +8,6 @@ import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine.State;
 import net.labymod.api.client.gui.icon.Icon;
-import net.labymod.api.client.resources.ResourceLocation;
 
 public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
 
@@ -17,7 +16,7 @@ public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   public IronTimerWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_ironWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/gold_ingot.png")));
+    setIcon(Icon.url("resource:minecraft://textures/item/iron_ingot.png"));
   }
 
   @Override
@@ -34,7 +33,7 @@ public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
     if (GommeAddon.bedwars.isRunning()) {
       long started = GommeAddon.bedwars.getStarted();
 
-      int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
+      int elapsedTime = (int) ((System.currentTimeMillis() - started) / 1000L);
       int timer = GommeAddon.bedwars.getIronTime() - elapsedTime % GommeAddon.bedwars.getIronTime();
 
       line.updateAndFlush(timer);

@@ -13,14 +13,13 @@ public class IronTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
   public IronTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_ironIconWidget");
     bindCategory(hudWidgetCategory);
+    setIcon(Icon.url("resource:minecraft://textures/item/iron_ingot.png"));
   }
 
   @Override
   public RenderableComponent getRenderableItemName(boolean isEditorContext) {
 
-    if (!GommeAddon.bedwars.isRunning()) {
-      return RenderableComponent.of(Component.text(GommeAddon.bedwars.getIronTime()));
-    }
+    if (!GommeAddon.bedwars.isRunning()) return RenderableComponent.of(Component.text(GommeAddon.bedwars.getIronTime()));
 
     long started = GommeAddon.bedwars.getStarted();
     int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
