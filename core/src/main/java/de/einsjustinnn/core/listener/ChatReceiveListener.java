@@ -12,7 +12,6 @@ public class ChatReceiveListener {
     String plainText = event.chatMessage().getPlainText();
 
     if (plainText.equalsIgnoreCase("[BedWars] Die Runde beginnt!") || plainText.equalsIgnoreCase("[ClassicBW] Die Runde beginnt!")) {
-
       GommeAddon.bedwars.setRunning(true);
       GommeAddon.bedwars.setStarted(System.currentTimeMillis());
     }

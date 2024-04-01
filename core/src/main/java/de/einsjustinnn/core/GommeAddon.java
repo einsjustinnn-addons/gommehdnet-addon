@@ -7,25 +7,25 @@ import de.einsjustinnn.core.hudwidgets.GoldTimerWidget;
 import de.einsjustinnn.core.hudwidgets.IronTimerIconWidget;
 import de.einsjustinnn.core.hudwidgets.IronTimerWidget;
 import de.einsjustinnn.core.listener.ChatReceiveListener;
-import de.einsjustinnn.core.listener.ScoreboardUpdateListener;
+import de.einsjustinnn.core.listener.NetworkPayloadListener;
 import de.einsjustinnn.core.utils.BedWars;
 import net.labymod.api.addon.LabyAddon;
 import net.labymod.api.client.gui.hud.binding.category.HudWidgetCategory;
 import net.labymod.api.models.addon.annotation.AddonMain;
-import de.einsjustinnn.core.listener.NetworkPayloadListener;
 
 @AddonMain
 public class GommeAddon extends LabyAddon<GommeConfiguration> {
 
-  public static final BedWars bedwars = new BedWars();
+  public static BedWars bedwars;
 
   @Override
   protected void enable() {
     this.registerSettingCategory();
 
+    bedwars = new BedWars();
+
     this.registerListener(new NetworkPayloadListener());
     this.registerListener(new ChatReceiveListener());
-    this.registerListener(new ScoreboardUpdateListener());
 
     HudWidgetCategory hudWidgetCategory = new HudWidgetCategory("gm_widgets");
 
@@ -38,7 +38,6 @@ public class GommeAddon extends LabyAddon<GommeConfiguration> {
     labyAPI().hudWidgetRegistry().register(new GoldTimerIconWidget(hudWidgetCategory));
     labyAPI().hudWidgetRegistry().register(new IronTimerIconWidget(hudWidgetCategory));
     labyAPI().hudWidgetRegistry().register(new DiamondTimerIconWidget(hudWidgetCategory));
-
   }
 
   @Override
