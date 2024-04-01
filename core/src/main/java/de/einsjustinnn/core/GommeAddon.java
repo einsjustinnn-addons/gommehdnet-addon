@@ -1,7 +1,10 @@
 package de.einsjustinnn.core;
 
+import de.einsjustinnn.core.hudwidgets.DiamondTimerIconWidget;
 import de.einsjustinnn.core.hudwidgets.DiamondTimerWidget;
+import de.einsjustinnn.core.hudwidgets.GoldTimerIconWidget;
 import de.einsjustinnn.core.hudwidgets.GoldTimerWidget;
+import de.einsjustinnn.core.hudwidgets.IronTimerIconWidget;
 import de.einsjustinnn.core.hudwidgets.IronTimerWidget;
 import de.einsjustinnn.core.listener.ChatReceiveListener;
 import de.einsjustinnn.core.listener.ScoreboardUpdateListener;
@@ -31,6 +34,10 @@ public class GommeAddon extends LabyAddon<GommeConfiguration> {
     labyAPI().hudWidgetRegistry().register(new GoldTimerWidget(hudWidgetCategory));
     labyAPI().hudWidgetRegistry().register(new IronTimerWidget(hudWidgetCategory));
     labyAPI().hudWidgetRegistry().register(new DiamondTimerWidget(hudWidgetCategory));
+
+    labyAPI().hudWidgetRegistry().register(new GoldTimerIconWidget(hudWidgetCategory));
+    labyAPI().hudWidgetRegistry().register(new IronTimerIconWidget(hudWidgetCategory));
+    labyAPI().hudWidgetRegistry().register(new DiamondTimerIconWidget(hudWidgetCategory));
 
   }
 
