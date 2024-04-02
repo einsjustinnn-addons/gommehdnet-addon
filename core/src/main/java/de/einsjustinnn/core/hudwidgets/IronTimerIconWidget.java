@@ -7,13 +7,14 @@ import net.labymod.api.client.gui.hud.hudwidget.item.EquipmentWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.item.ItemHudWidget;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.render.font.RenderableComponent;
+import net.labymod.api.client.resources.ResourceLocation;
 
 public class IronTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   public IronTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_ironIconWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.url("resource:minecraft://textures/item/iron_ingot.png"));
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/iron_ingot.png")));
   }
 
   @Override
@@ -30,7 +31,7 @@ public class IronTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   @Override
   public Icon createPlaceholderIcon() {
-    return Icon.url("resource:minecraft://textures/item/iron_ingot.png");
+    return Icon.texture(ResourceLocation.create("minecraft", "textures/item/iron_ingot.png"));
   }
 
   @Override

@@ -7,13 +7,14 @@ import net.labymod.api.client.gui.hud.hudwidget.item.EquipmentWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.item.ItemHudWidget;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.render.font.RenderableComponent;
+import net.labymod.api.client.resources.ResourceLocation;
 
 public class GoldTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   public GoldTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_goldIconWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.url("resource:minecraft://textures/item/gold_ingot.png"));
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/gold_ingot.png")));
   }
 
   @Override
@@ -30,7 +31,7 @@ public class GoldTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   @Override
   public Icon createPlaceholderIcon() {
-    return Icon.url("resource:minecraft://textures/item/gold_ingot.png");
+    return Icon.texture(ResourceLocation.create("minecraft", "textures/item/gold_ingot.png"));
   }
 
   @Override

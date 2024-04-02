@@ -7,13 +7,14 @@ import net.labymod.api.client.gui.hud.hudwidget.item.EquipmentWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.item.ItemHudWidget;
 import net.labymod.api.client.gui.icon.Icon;
 import net.labymod.api.client.render.font.RenderableComponent;
+import net.labymod.api.client.resources.ResourceLocation;
 
 public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   public DiamondTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_diamondIconWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.url("resource:minecraft://textures/item/diamond.png"));
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/diamond.png")));
   }
 
   @Override
@@ -30,7 +31,7 @@ public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig>
 
   @Override
   public Icon createPlaceholderIcon() {
-    return Icon.url("resource:minecraft://textures/item/diamond.png");
+    return Icon.texture(ResourceLocation.create("minecraft", "textures/item/diamond.png"));
   }
 
   @Override

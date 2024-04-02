@@ -8,6 +8,7 @@ import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine.State;
 import net.labymod.api.client.gui.icon.Icon;
+import net.labymod.api.client.resources.ResourceLocation;
 
 public class DiamondTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
 
@@ -16,13 +17,13 @@ public class DiamondTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   public DiamondTimerWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_diamondWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.url("resource:minecraft://textures/item/diamond.png"));
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/diamond.png")));
   }
 
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_diamondWidget.name"), GommeAddon.bedwars.getDiamondTime());
+    line = createLine(Component.translatable("gommehdnetaddon.hudWidget.bw_diamondWidget.name"), GommeAddon.bedwars.getDiamondTime());
   }
 
   @Override

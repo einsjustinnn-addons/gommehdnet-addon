@@ -8,6 +8,7 @@ import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidgetConfig;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextLine.State;
 import net.labymod.api.client.gui.icon.Icon;
+import net.labymod.api.client.resources.ResourceLocation;
 
 public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
 
@@ -16,13 +17,13 @@ public class IronTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   public IronTimerWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_ironWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.url("resource:minecraft://textures/item/iron_ingot.png"));
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/iron_ingot.png")));
   }
 
   @Override
   public void load(TextHudWidgetConfig config) {
     super.load(config);
-    line = createLine(Component.translatable("gommehdnet.hudWidget.bw_ironWidget.name"), GommeAddon.bedwars.getIronTime());
+    line = createLine(Component.translatable("gommehdnetaddon.hudWidget.bw_ironWidget.name"), GommeAddon.bedwars.getIronTime());
   }
 
   @Override
