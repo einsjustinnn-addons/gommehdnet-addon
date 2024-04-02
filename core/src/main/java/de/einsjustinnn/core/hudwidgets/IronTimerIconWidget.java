@@ -1,6 +1,7 @@
 package de.einsjustinnn.core.hudwidgets;
 
 import de.einsjustinnn.core.GommeAddon;
+import net.labymod.api.Laby;
 import net.labymod.api.client.component.Component;
 import net.labymod.api.client.gui.hud.binding.category.HudWidgetCategory;
 import net.labymod.api.client.gui.hud.hudwidget.item.EquipmentWidgetConfig;
@@ -14,7 +15,10 @@ public class IronTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
   public IronTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_ironIconWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/iron_ingot.png")));
+
+    String icon = "textures/item/iron_ingot.png";
+    if (Laby.labyAPI().minecraft().getProtocolVersion() <= 393) icon = "textures/items/iron_ingot.png";
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", icon)));
   }
 
   @Override
@@ -31,7 +35,10 @@ public class IronTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig> {
 
   @Override
   public Icon createPlaceholderIcon() {
-    return Icon.texture(ResourceLocation.create("minecraft", "textures/item/iron_ingot.png"));
+
+    String icon = "textures/item/iron_ingot.png";
+    if (Laby.labyAPI().minecraft().getProtocolVersion() <= 393) icon = "textures/items/iron_ingot.png";
+    return Icon.texture(ResourceLocation.create("minecraft", icon));
   }
 
   @Override

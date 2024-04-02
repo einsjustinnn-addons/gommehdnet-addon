@@ -1,6 +1,7 @@
 package de.einsjustinnn.core.hudwidgets;
 
 import de.einsjustinnn.core.GommeAddon;
+import net.labymod.api.Laby;
 import net.labymod.api.client.component.Component;
 import net.labymod.api.client.gui.hud.binding.category.HudWidgetCategory;
 import net.labymod.api.client.gui.hud.hudwidget.item.EquipmentWidgetConfig;
@@ -14,7 +15,10 @@ public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig>
   public DiamondTimerIconWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_diamondIconWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/diamond.png")));
+
+    String icon = "textures/item/diamond.png";
+    if (Laby.labyAPI().minecraft().getProtocolVersion() <= 393) icon = "textures/items/diamond.png";
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", icon)));
   }
 
   @Override
@@ -31,7 +35,9 @@ public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig>
 
   @Override
   public Icon createPlaceholderIcon() {
-    return Icon.texture(ResourceLocation.create("minecraft", "textures/item/diamond.png"));
+    String icon = "textures/item/diamond.png";
+    if (Laby.labyAPI().minecraft().getProtocolVersion() <= 393) icon = "textures/items/diamond.png";
+    return Icon.texture(ResourceLocation.create("minecraft", icon));
   }
 
   @Override

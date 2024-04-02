@@ -11,7 +11,7 @@ public class ChatReceiveListener {
   @Subscribe
   public void onChatReceive(ChatReceiveEvent event) {
 
-    String plainText = event.chatMessage().getPlainText().toLowerCase();
+    String plainText = event.chatMessage().getPlainText();
 
     for (String message : gameStarted) {
       if (plainText.equalsIgnoreCase("[Bedwars] " + message) || plainText.equalsIgnoreCase("[ClassicBW] " + message)) {

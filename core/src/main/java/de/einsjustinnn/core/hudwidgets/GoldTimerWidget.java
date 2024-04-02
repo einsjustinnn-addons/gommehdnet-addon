@@ -1,6 +1,7 @@
 package de.einsjustinnn.core.hudwidgets;
 
 import de.einsjustinnn.core.GommeAddon;
+import net.labymod.api.Laby;
 import net.labymod.api.client.component.Component;
 import net.labymod.api.client.gui.hud.binding.category.HudWidgetCategory;
 import net.labymod.api.client.gui.hud.hudwidget.text.TextHudWidget;
@@ -17,7 +18,10 @@ public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
   public GoldTimerWidget(HudWidgetCategory hudWidgetCategory) {
     super("bw_goldWidget");
     bindCategory(hudWidgetCategory);
-    setIcon(Icon.texture(ResourceLocation.create("minecraft", "textures/item/gold_ingot.png")));
+
+    String icon = "textures/item/gold_ingot.png";
+    if (Laby.labyAPI().minecraft().getProtocolVersion() <= 393) icon = "textures/items/gold_ingot.png";
+    setIcon(Icon.texture(ResourceLocation.create("minecraft", icon)));
   }
 
   @Override
