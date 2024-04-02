@@ -31,6 +31,10 @@ public class BedWars {
   }
 
   public int getDiamondTime() {
+    /*
+    TODO: (non classic)
+    - add Diamond II Time
+     */
     if (!classic) {
       return 25;
     }
@@ -38,6 +42,10 @@ public class BedWars {
   }
 
   public int getGoldTime() {
+    /*
+    TODO: (non classic)
+    - add Gold II Time
+     */
     if (classic) {
       return 30;
     } else {
@@ -47,7 +55,7 @@ public class BedWars {
 
   public int getIronTime() {
     if (classic) {
-      return 12;
+      return 10;
     } else {
       return 8;
     }
