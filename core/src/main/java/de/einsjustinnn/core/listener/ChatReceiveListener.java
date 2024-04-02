@@ -11,6 +11,12 @@ public class ChatReceiveListener {
   @Subscribe
   public void onChatReceive(ChatReceiveEvent event) {
 
+    // 1-2
+    // Gold Diamond
+    // Gold Diamant
+    // [BedWars] The spawn rate of Diamond was increased to level 2
+    // [BedWars] Die Spawnrate von Diamant wurde auf Stufe 2 erhöht
+
     String plainText = event.chatMessage().getPlainText();
 
     for (String message : gameStarted) {
