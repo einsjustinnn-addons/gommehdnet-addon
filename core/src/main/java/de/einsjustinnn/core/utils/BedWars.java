@@ -6,6 +6,9 @@ public class BedWars {
   private boolean classic;
   private long started;
 
+  private int goldTime;
+  private int diamondTime;
+
   public void setClassic(boolean classic) {
     this.classic = classic;
   }
@@ -30,26 +33,44 @@ public class BedWars {
     return started;
   }
 
+  public void upgradeDiamondTime() {
+    switch (diamondTime) {
+      case 25:
+        diamondTime = 17;
+        break;
+      case 17:
+        diamondTime = 13;
+        break;
+      default:
+        break;
+    }
+  }
+
   public int getDiamondTime() {
-    /*
-    TODO: (non classic)
-    - add Diamond II Time
-     */
     if (!classic) {
-      return 25;
+      return diamondTime;
     }
     return -1;
   }
 
+  public void upgradeGoldTime() {
+    switch (goldTime) {
+      case 40:
+        goldTime = 27;
+        break;
+      case 27:
+        goldTime = 20;
+        break;
+      default:
+        break;
+    }
+  }
+
   public int getGoldTime() {
-    /*
-    TODO: (non classic)
-    - add Gold II Time
-     */
     if (classic) {
       return 30;
     } else {
-      return 40;
+      return goldTime;
     }
   }
 
@@ -65,5 +86,7 @@ public class BedWars {
     started = 0L;
     running = false;
     classic = false;
+    goldTime = 40;
+    diamondTime = 25;
   }
 }
