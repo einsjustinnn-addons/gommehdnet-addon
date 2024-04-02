@@ -24,7 +24,7 @@ public class NetworkPayloadListener {
 
       String serverType = jsonObject.get("data").getAsJsonObject().get("cloud_type").getAsString();
 
-      GommeAddon.bedwars.reset();
+      if (serverType.equalsIgnoreCase("lobby")) GommeAddon.bedwars.reset();
 
       if (serverType.equalsIgnoreCase("classicbw")) GommeAddon.bedwars.setClassic(true);
     }
