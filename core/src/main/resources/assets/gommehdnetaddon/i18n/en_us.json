@@ -33,9 +33,6 @@
       "bw_diamondIconWidget": {
         "name": "Diamond Icon Timer"
       }
-    },
-    "bedwars": {
-      "startedGame": "The game has started!"
     }
   }
 }
