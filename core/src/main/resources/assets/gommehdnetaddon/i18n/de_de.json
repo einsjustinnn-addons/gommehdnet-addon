@@ -3,7 +3,7 @@
     "hudWidgetCategory": {
       "gm_widgets": {
         "name": "GommeHDnet Widgets",
-        "description": "shows you information in-game about BedWars"
+        "description": "Zeigt dir In-Game information über BedWars an"
       }
     }
   },
@@ -11,7 +11,7 @@
     "settings": {
       "name": "GommeHDnet Addon",
       "enabled": {
-        "name": "Enabled"
+        "name": "Aktiviert"
       }
     },
     "hudWidget": {
@@ -22,16 +22,16 @@
         "name": "Gold Icon Timer"
       },
       "bw_ironWidget": {
-        "name": "Iron Timer"
+        "name": "Eisen Timer"
       },
       "bw_ironIconWidget": {
-        "name": "Iron Icon Timer"
+        "name": "Eisen Icon Timer"
       },
       "bw_diamondWidget": {
-        "name": "Diamond Timer"
+        "name": "Diamant Timer"
       },
       "bw_diamondIconWidget": {
-        "name": "Diamond Icon Timer"
+        "name": "Diamant Icon Timer"
       }
     }
   }
