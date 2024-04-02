@@ -1,0 +1,41 @@
+{
+  "labymod": {
+    "hudWidgetCategory": {
+      "gm_widgets": {
+        "name": "GommeHDnet Widgets",
+        "description": "shows you information in-game about BedWars"
+      }
+    }
+  },
+  "gommehdnetaddon": {
+    "settings": {
+      "name": "GommeHDnet Addon",
+      "enabled": {
+        "name": "Enabled"
+      }
+    },
+    "hudWidget": {
+      "bw_goldWidget": {
+        "name": "Gold Timer"
+      },
+      "bw_goldIconWidget": {
+        "name": "Gold Icon Timer"
+      },
+      "bw_ironWidget": {
+        "name": "Iron Timer"
+      },
+      "bw_ironIconWidget": {
+        "name": "Iron Icon Timer"
+      },
+      "bw_diamondWidget": {
+        "name": "Diamond Timer"
+      },
+      "bw_diamondIconWidget": {
+        "name": "Diamond Icon Timer"
+      }
+    },
+    "bedwars": {
+      "startedGame": "Die Runde beginnt!"
+    }
+  }
+}
