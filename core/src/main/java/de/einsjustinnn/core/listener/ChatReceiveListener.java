@@ -11,13 +11,18 @@ public class ChatReceiveListener {
   @Subscribe
   public void onChatReceive(ChatReceiveEvent event) {
 
-    // 1-2
-    // Gold Diamond
-    // Gold Diamant
-    // [BedWars] The spawn rate of Diamond was increased to level 2
-    // [BedWars] Die Spawnrate von Diamant wurde auf Stufe 2 erhöht
-
     String plainText = event.chatMessage().getPlainText();
+
+    if (plainText.startsWith("[Bedwars]")) {
+      if (plainText.contains("The spawn rate of") || plainText.contains("Die Spawnrate von")) {
+        if (plainText.contains("Diamond") || plainText.contains("Diamant")) {
+          GommeAddon.bedwars.upgradeDiamondTime();
+        }
+        if (plainText.contains("Gold")) {
+          GommeAddon.bedwars.upgradeGoldTime();
+        }
+      }
+    }
 
     for (String message : gameStarted) {
       if (plainText.equalsIgnoreCase("[Bedwars] " + message) || plainText.equalsIgnoreCase("[ClassicBW] " + message)) {
