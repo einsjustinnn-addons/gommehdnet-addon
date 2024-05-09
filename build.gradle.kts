@@ -15,7 +15,7 @@ labyMod {
         author = "EinsJustinnn"
         description = "This addon currently displays the BedWars spawn times of the items."
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "0.0.1")
+        version = System.getenv().getOrDefault("VERSION", "1.0.1")
     }
 
     minecraft {
