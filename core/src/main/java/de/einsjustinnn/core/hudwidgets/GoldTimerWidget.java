@@ -37,8 +37,11 @@ public class GoldTimerWidget extends TextHudWidget<TextHudWidgetConfig> {
     if (GommeAddon.bedwars.isRunning()) {
       long started = GommeAddon.bedwars.getStarted();
 
-      int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
-      int timer = GommeAddon.bedwars.getGoldTime() - elapsedTime % GommeAddon.bedwars.getGoldTime();
+      int elapsedTime = (int) ((System.currentTimeMillis() - started) / 1000L);
+      int timer = GommeAddon.bedwars.getGoldTime();
+      if (timer != 0) {
+        timer = timer - elapsedTime % timer;
+      }
 
       line.updateAndFlush(timer);
 

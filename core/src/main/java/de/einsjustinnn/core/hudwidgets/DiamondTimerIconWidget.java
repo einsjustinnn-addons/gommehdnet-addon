@@ -28,7 +28,10 @@ public class DiamondTimerIconWidget extends ItemHudWidget<EquipmentWidgetConfig>
 
     long started = GommeAddon.bedwars.getStarted();
     int elapsedTime = (int)((System.currentTimeMillis() - started) / 1000L);
-    int timer = GommeAddon.bedwars.getDiamondTime() - elapsedTime % GommeAddon.bedwars.getDiamondTime();
+    int timer = GommeAddon.bedwars.getDiamondTime();
+    if (timer != 0) {
+      timer = timer - elapsedTime % timer;
+    }
 
     return RenderableComponent.of(Component.text(timer));
   }
